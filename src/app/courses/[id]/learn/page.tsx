@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import MainLayout from "@/components/layout/MainLayout";
 import { courses, lessonSections, quizQuestions } from "@/lib/data";
+import Image from "next/image";
 import {
   ArrowLeft,
   Play,
@@ -59,10 +60,11 @@ export default function CourseLearnPage({
         <div className="flex-1 min-w-0">
           {/* Video Player */}
           <div className="relative w-full h-64 rounded-xl overflow-hidden bg-gray-800 mb-4">
-            <img
+            <Image
               src={course.image}
               alt={course.title}
-              className="w-full h-full object-cover opacity-80"
+              fill
+              className="object-cover opacity-80"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <button className="w-12 h-12 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all">
